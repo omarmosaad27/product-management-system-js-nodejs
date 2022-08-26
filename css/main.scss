@@ -59,8 +59,9 @@ nav{
 }
 
 .app_container{
-    display: flex;
+    display: grid;
     gap: 40px;
+    grid-template-columns: 1fr 4fr;
     height: 100%;
     aside{
         width: 300px;
@@ -136,7 +137,16 @@ nav{
     .crud{
         padding: 1rem;
         .inputs{
-                
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+                div{
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                    
+                }
                 input{
                     border: none;
                     outline: none;
@@ -148,6 +158,8 @@ nav{
                     margin-bottom: 20px;
                     border: 2px solid white; 
                     transition: all 0.3s ease-in-out;
+                    width: 90%;
+                    height: 40px;
                     &:focus{
                         border: 2px solid var(--main-green); 
                     }
@@ -156,10 +168,13 @@ nav{
                     background-color: white;
                     color: var(--main-green);
                     font-weight: 600;
-                    padding: 0.5rem 0.7rem ;
                     border-radius: 0.5rem;
                     border: 2px solid white; 
-
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 40px;
+                    padding: 0.5rem 0.7rem;
                 }
                 .submit{
                     background-color: var(--main-green);
@@ -262,10 +277,10 @@ nav{
 
 @media screen and (max-width:992px) {
     .app_container{
-        flex-direction: column;
+        grid-template-columns: 1fr;
         aside{
             width: 100%;
-            height: auto;
+            height: 300px;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -278,9 +293,27 @@ nav{
         }
     }
 }
-@media screen and (max-width:530px){
+@media screen and (max-width:700px){
+    nav{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
     .app_container{
+        aside{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 400px;
+        }
+        
         .crud{
+            .inputs{
+                div{
+                    flex-wrap: wrap;
+                }
+            }
             .outputs{
                 overflow: hidden;
                 position: relative;
@@ -295,29 +328,17 @@ nav{
                     top:0;
                     left: 0;
                     height: 100%;
+                    tbody{
+                    tr{
+                    &:last-child td{
+                        border-bottom: 1px solid var(--dark-blue);
+                    }
+                    td{
+                        font-size: 0.8rem;
+                    }
+                }}
                 }
             }
         }
-    }
-}
-@media screen and (max-width:530px) {
-    nav{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-    }
-    .app_container{
-        aside{
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        tbody{
-            tr{
-            &:last-child td{
-                border-bottom: 1px solid var(--dark-blue);
-            }
-        }}
     }
 }

@@ -55,12 +55,12 @@ submit.addEventListener("click", function () {
                 }
             } else {
                 products.push(newProduct)
-                mode = 'create'
-                submit.innerHTML = "create"
-                count.style.display = "block"
             }
         } else {
             products[iTemp] = newProduct
+            mode = 'create'
+            submit.innerHTML = "create"
+            count.style.display = "flex"
         }
         clearInputs()
     }
