@@ -15,7 +15,47 @@
 body{
     background-color: var(--body-bcg);
     font-family: 'Poppins', sans-serif;
-    height: 100%;
+    height: auto;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--main-green);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--body-bcg);
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 2rem;
+    background-color: white;
+    .logo{
+        color: var(--main-green);
+        font-size: 1rem;
+        h1{
+            font-weight: 500;
+        }
+    }
+    .user{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        h2{
+            font-size: 0.8rem;
+            color: var(--dark-blue);
+            span{
+                color: var(--main-green);
+            }
+        }
+        img{
+            width: 40px;
+        }
+    }
 }
 
 .app_container{
@@ -238,13 +278,46 @@ body{
         }
     }
 }
-
-@media screen and (max-width:510px) {
+@media screen and (max-width:530px){
+    .app_container{
+        .crud{
+            .outputs{
+                overflow: hidden;
+                position: relative;
+                top: 0;
+                left: 0;
+                height: 800px;
+                width: 100%;
+                margin-top: 50px;
+                table{
+                    position: absolute;
+                    pointer-events: none;
+                    top:0;
+                    left: 0;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:530px) {
+    nav{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
     .app_container{
         aside{
             align-items: center;
             justify-content: center;
             text-align: center;
         }
+        tbody{
+            tr{
+            &:last-child td{
+                border-bottom: 1px solid var(--dark-blue);
+            }
+        }}
     }
 }

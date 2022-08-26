@@ -2,66 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login-styles.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>product management system</title>
+    <title>product management system login</title>
 </head>
 <body>
-    <div class="app_container">
-        <aside >
-            <div class="total-products">
-                <h2>overview</h2>
-                <h3>total products</h3>
-                <p></p>
+    <div class="hero">
+        <form action="system.html" method="get">
+            <h1>create account</h1>
+            <div  class="input-group" >
+                <input type="text" id="username" class="input" placeholder="user name" name="username"  >
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>error message</p>
             </div>
-            <div class="search">
-                <input type="text" placeholder="search" id="search" onkeyup="search(this.value)">
-                <div class="search-btns">
-                    <button onclick="getSearchMode(this.id)" id="search_title" class="search_title">search Title</button>
-                    <button onclick="getSearchMode(this.id)" id="search_category" class="search_category">search category</button>
-                </div>
+            <div  class="input-group" >
+                <input type="email" id="email" class="input" placeholder="email" name="email"  >
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>error message</p>
             </div>
-    
-        </aside>
-        <section class="crud">
-            <div class="inputs">
-                <div class="price">
-                    <input onkeyup="getTotal()" type="text" id="title" placeholder="product title">
-                    <input onkeyup="getTotal()" type="number"  id="price" placeholder="product price">
-                    <input onkeyup="getTotal()" type="number"  id="taxes" placeholder="product taxes">
-                    <input onkeyup="getTotal()" type="number"  id="discount" placeholder="product discount">
-                    <small id="total">0</small>
-                </div>
-                <input type="number" id="count" placeholder="count">
-                <input type="text" placeholder="category" id="category"> 
-                <button class="submit">create <i class="fa-solid fa-square-plus"></i></button>
-                
+            <div  class="input-group" >
+                <input type="password" id="password" class="input" placeholder="password" name="password" >
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>error message</p>
             </div>
-            <div class="clear">
-
-            </div>
-            <div class="outputs">
-                <table>
-                    <tr class="table-head">
-                        <th>id</th>
-                        <th>title</th>
-                        <th>price</th>
-                        <th>taxes</th>
-                        <th>discount</th>
-                        <th>total</th>
-                        <th>category</th>
-                        <th>update</th>
-                        <th>delete</th>
-                    </tr>
-                    <tbody id="t_body">
-                        
-                    </tbody>
-                </table>
-            </div>
-        </section>
+            <div  class="input-group" >
+                <input type="password" id="confirm-password" class="input" placeholder="confirm password" name="confirmpassword" >
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>error message</p>
+            </div>  
+            <button type="submit" class="submit_form">sign up</button>  
+        </form>
     </div>
-    <script src="js/script.js"></script>
+    
+    <script src="js/form.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
-// global variables
+
+// product management system global variables
 let title = document.getElementById("title")
 let price = document.getElementById("price")
 let taxes = document.getElementById("taxes")
@@ -12,6 +13,9 @@ let total_products = document.querySelector(".total-products p")
 let iTemp;
 let mode = "create";
 
+/*  
+ * start product management system functionality 
+ */ 
 // get total
 function getTotal() {
     if (price.value !== "") {
@@ -42,11 +46,11 @@ submit.addEventListener("click", function () {
         category: category.value.toLowerCase(),
     }
 
-    if (title.value !== "" && price.value !== "" && newProduct.count < 100 ) {
+    if (title.value !== "" && price.value !== "" && newProduct.count < 100) {
         
         if (mode === 'create') {
             if (newProduct.count > 1) {
-                for (let i = 0; i < newProduct.count; i++){
+                for (let i = 0; i < newProduct.count; i++) {
                     products.push(newProduct)
                 }
             } else {
@@ -61,11 +65,11 @@ submit.addEventListener("click", function () {
         clearInputs()
     }
     // save local storage
-    localStorage.setItem("product",JSON.stringify(products))
+    localStorage.setItem("product", JSON.stringify(products))
     console.log(products);
     showData()
     
-})
+});
 // clear inputs
 function clearInputs() {
     title.value = ""
@@ -74,6 +78,7 @@ function clearInputs() {
     discount.value = ""
     count.value = ""
     category.value = ""
+    total.innerHTML = "0"
 }
 // read
 
@@ -204,4 +209,60 @@ function search(value) {
 
     document.getElementById("t_body").innerHTML = table;
 }
-//  clean data
+
+/*  
+ * end product management system functionality 
+ */
+
+
+const user = document.querySelector(".user h2 span")
+
+const params = new URLSearchParams(window.location.search)
+params.get("username")
+user.append(params.get("username"))
+// params.forEach((value, key) => {
+//     user.append(`${key} = ${value}`)
+//     console.log(value);
+// })
+
+
+let outputs = document.querySelector(".outputs")
+let table = document.getElementById("table")
+
+let pressed = false;
+let startx;
+let x;
+
+outputs.addEventListener("mousedown", (e) => {
+    pressed = true;
+    startx = e.offsetX - table.offsetLeft;
+    console.log(startx);
+    outputs.style.cursor = "grabbing"
+})
+
+outputs.addEventListener("mouseenter", () => {
+    outputs.style.cursor = "grab"
+})
+outputs.addEventListener("mouseup", () => {
+    outputs.style.cursor = "grab"
+})
+window.addEventListener("mouseup", () => {
+    pressed = false;
+})
+outputs.addEventListener("mousemove", (e) => {
+    if (!pressed) return;
+    e.preventDefault();
+    x = e.offsetX;
+    table.style.left = `${x - startx}px`
+    checkboundry()
+})
+
+function checkboundry() {
+    let outer = outputs.getBoundingClientRect();
+    let inner = table.getBoundingClientRect();
+    if (parseInt(table.style.left )> 0) {
+        table.style.left = "0px"
+    } else if (inner.right < outer.right) {
+        table.style.left = `-${inner.width - outer.width}px`
+    }
+}

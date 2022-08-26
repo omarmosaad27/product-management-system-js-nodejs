@@ -16,7 +16,69 @@
 body {
   background-color: var(--body-bcg);
   font-family: 'Poppins', sans-serif;
-  height: 100%;
+  height: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--main-green);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--body-bcg);
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  padding: 2rem;
+  background-color: white;
+}
+
+nav .logo {
+  color: var(--main-green);
+  font-size: 1rem;
+}
+
+nav .logo h1 {
+  font-weight: 500;
+}
+
+nav .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+nav .user h2 {
+  font-size: 0.8rem;
+  color: var(--dark-blue);
+}
+
+nav .user h2 span {
+  color: var(--main-green);
+}
+
+nav .user img {
+  width: 40px;
 }
 
 .app_container {
@@ -284,7 +346,39 @@ body {
   }
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 530px) {
+  .app_container .crud .outputs {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 800px;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .app_container .crud .outputs table {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+  }
   .app_container aside {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -293,6 +387,9 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     text-align: center;
+  }
+  .app_container tbody tr:last-child td {
+    border-bottom: 1px solid var(--dark-blue);
   }
 }
 /*# sourceMappingURL=main.css.map */

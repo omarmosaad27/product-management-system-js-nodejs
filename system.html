@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>product management system</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>manage Products <i class="fa-solid fa-bars-progress"></i></h1>
+        </div>
+        <div class="user">
+            <h2>
+                Hello,
+                <span></span>
+            </h2>
+            <div class="avatar">
+                <img src="images/avatar 2.png" alt="person">
+            </div>
+        </div>
+    </nav>
+    <div class="app_container">
+        <aside >
+            <div class="total-products">
+                <h2>overview</h2>
+                <h3>total products</h3>
+                <p></p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="search" id="search" onkeyup="search(this.value)">
+                <div class="search-btns">
+                    <button onclick="getSearchMode(this.id)" id="search_title" class="search_title">search Title</button>
+                    <button onclick="getSearchMode(this.id)" id="search_category" class="search_category">search category</button>
+                </div>
+            </div>
+    
+        </aside>
+        <section class="crud">
+            <div class="inputs">
+                <div class="price">
+                    <input onkeyup="getTotal()" type="text" id="title" placeholder="product title">
+                    <input onkeyup="getTotal()" type="number"  id="price" placeholder="product price">
+                    <input onkeyup="getTotal()" type="number"  id="taxes" placeholder="product taxes">
+                    <input onkeyup="getTotal()" type="number"  id="discount" placeholder="product discount">
+                    <small id="total">0</small>
+                </div>
+                <input type="number" id="count" placeholder="count">
+                <input type="text" placeholder="category" id="category"> 
+                <button class="submit">create <i class="fa-solid fa-square-plus"></i></button>
+                
+            </div>
+            <div class="clear">
+
+            </div>
+            <div class="outputs">
+                <table id="table">
+                    <tr class="table-head">
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>taxes</th>
+                        <th>discount</th>
+                        <th>total</th>
+                        <th>category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                    <tbody id="t_body">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

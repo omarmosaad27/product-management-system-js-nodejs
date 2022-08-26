@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+    text-transform: capitalize;
+
+}
+:root {
+    --blue:#384FBE ;
+    --body-bcg:#EAEDF8;
+    --main-green:#3AC2CF;
+    --dark-blue:#10203B;
+}
+body{
+    text-transform: capitalize;
+    box-sizing: border-box;
+    background-color: var(--body-bcg);
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    perspective: 600px;
+}
+form{
+    width: 360px;
+    height: 480px;
+    background-color: white;
+    margin: 6% auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form h1{
+    color: var(--dark-blue);
+    margin-bottom: 50px;
+}
+.input-group{
+    width: 280px;
+    transition: .5s;
+    position: relative;
+}
+.input-group i{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    visibility: hidden;
+    
+}
+.input-group p{
+    color: tomato;
+    font-size: 0.9rem;
+    visibility: hidden;
+}
+.success input{
+    border-bottom:2px solid var(--main-green);
+}
+.success .fa-circle-check{
+    visibility: visible;
+    color: var(--main-green);
+}
+.invalid input{
+    border-bottom:2px solid tomato;
+}
+.invalid .fa-circle-exclamation{
+    visibility: visible;
+    color: tomato;
+}
+.invalid p{
+    visibility: visible;
+}
+.input{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.submit_form{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background-color: var(--main-green);
+    border: 0;
+    border-radius: 30px;
+    outline: none;
+    font-size: 20px;
+    color: white;
+}
